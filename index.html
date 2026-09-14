@@ -134,7 +134,7 @@
   .row-media::after{content:"";position:absolute;inset:0;background:
       radial-gradient(70% 60% at 30% 30%,rgba(142,207,173,.28),transparent 70%),
       radial-gradient(60% 55% at 75% 75%,rgba(226,88,39,.20),transparent 72%)}
-  .row-media.m1{background-image:var(--ph-cafe)}
+  .row-media.m1{background-image:var(--ph-cafe);background-position:center 30%}
   .row-media.m2{background-image:var(--ph-workshop);background-position:center 18%}
   .row-media.m3{background-image:var(--ph-nordic)}
   .row-body{padding:64px 58px;display:flex;flex-direction:column;justify-content:center}
@@ -142,6 +142,12 @@
   .row-body p{margin-top:16px;color:var(--muted)}
   .row-tag{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
   .row-tag b{display:block;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+  /* Desktop: while a section is closed the photo simply fills its half. When its "More" panel is
+     open the section gets very tall, so the photo becomes screen-height and sticks in view while
+     you scroll — the photo side stays filled, and people aren't cropped into a thin strip. */
+  @media(min-width:901px){
+    .row:has(details.more[open]) .row-media{align-self:start;position:sticky;top:var(--nav-h);height:calc(100vh - var(--nav-h))}
+  }
   @media(max-width:900px){
     .row{grid-template-columns:1fr}
     .row:nth-child(even) .row-media{order:0}
@@ -150,7 +156,7 @@
   }
 
   /* ── NUMBERS ── */
-  .record{background:var(--paper-2)}
+  .record{background:var(--paper-2);padding-bottom:28px}
   .note{margin-top:34px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:0 6px 6px 0;padding:22px 24px;font-size:.94rem;color:var(--muted);max-width:820px}
   .cafe-note{margin:4px 0 22px;max-width:none}
   .note b{color:var(--ink);font-weight:600}
@@ -235,12 +241,17 @@
 
   /* ── people ── */
   .ppl-h{margin-top:64px;padding-top:40px;border-top:1px solid var(--line);font-size:clamp(1.5rem,2.6vw,2rem);font-weight:300;letter-spacing:-.01em;scroll-margin-top:calc(var(--nav-h) + 20px)}
-  .ppl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+  .ppl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px;align-items:start}
   @media(max-width:880px){.ppl{grid-template-columns:1fr}}
   .person{background:#fff;border:1px solid var(--line);border-radius:6px;padding:28px 24px;display:flex;flex-direction:column}
   .person .role{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
   .person h3{margin-top:9px}
   .person p{margin-top:13px;color:var(--muted);font-size:.92rem}
+  /* People bios: show the first ~third, expand on click */
+  .person p.clamp{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+  .bio-more{align-self:flex-start;margin-top:10px;padding:0;background:none;border:0;cursor:pointer;font:inherit;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--orange)}
+  .bio-more:hover{text-decoration:underline}
+  .bio-more:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
   .person .tail{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
 
 
@@ -357,7 +368,7 @@
 <section id="work" style="padding-bottom:54px">
   <div class="wrap narrow" style="margin-left:auto;margin-right:auto">
     <div class="kicker" data-i18n="work_label">What we do</div>
-    <h2 data-i18n="work_h">Caring for people and the land, one small step at a time</h2>
+    <h2 data-i18n-html="work_h">Caring for people and the land,<br>one small action at a time</h2>
     <p class="lead" data-i18n="work_lead">People rarely lack information about environmental change. What is missing is a way to act on it that feels meaningful — a practical step small enough to actually take, from a place of wellbeing rather than worry. Everything we run is built around that gap.</p>
   </div>
 </section>
@@ -373,16 +384,16 @@
       <details class="more">
         <summary><span data-i18n="more_1">More about the workshops</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
         <div class="more-body">
-          <p data-i18n="c2_x">Everything is hands-on and free. People leave having done the thing rather than having heard about it — a heap turned, a bed built, a jar filled.</p>
+          <p data-i18n="c2_x">Our workshops are practical and hands-on, and open to people of all ages and backgrounds.</p>
           <div class="wkgal">
             <figure data-gallery="ee-1" data-count="5" data-title="g1"><div class="shot"><img src="photos/wk-weaving.jpg" alt="Children and adults weaving with sticks and wildflowers at a garden table" loading="lazy"></div>
-              <figcaption data-i18n="w1">Weaving with sticks, lupins and whatever the garden gave that morning — families working side by side, not children dropped off</figcaption></figure>
+              <figcaption data-i18n="w1">Seljagarður community garden — nature-craft and a natural outdoor playground for children, weaving with sticks, lupins and wildflowers and building play spaces from logs and branches</figcaption></figure>
             <figure data-gallery="ee-2" data-count="5" data-title="g2"><div class="shot"><img src="photos/wk-houses.jpg" alt="Eight small woven houses made from grass, flowers and card" loading="lazy"></div>
-              <figcaption data-i18n="w2">What they made. Every one different, every one taken home</figcaption></figure>
+              <figcaption data-i18n="w2">The Nordic House — nature-craft activities for children, including those from immigrant and refugee backgrounds; nature knows no barriers and gives everyone a sense of belonging</figcaption></figure>
             <figure data-gallery="ee-3" data-count="7" data-title="g3"><div class="shot"><img src="photos/wk-harvest.jpg" alt="Lifting garlic and red onions from a mulched raised bed" loading="lazy"></div>
-              <figcaption data-i18n="w0">Lifting garlic and red onions from a bed that has never been dug — just compost and woodchip laid on top, year after year</figcaption></figure>
+              <figcaption data-i18n="w0">Seljagarður community garden and Reykjalundur regenerative farm — permaculture gardening education, local food systems for Nordic sustainability, and farm tours</figcaption></figure>
             <figure class="wide" data-gallery="ee-4" data-count="8" data-title="g4"><div class="shot"><img src="photos/wk-greenhouse.jpg" alt="The community garden greenhouse with wildflowers and woven work on the bench" loading="lazy"></div>
-              <figcaption data-i18n="w4">The garden itself — the greenhouse, the bench that doubles as a workbench, and the flowers everyone picks from</figcaption></figure>
+              <figcaption data-i18n="w4">Local community projects — preserving food, herbs and seaweed</figcaption></figure>
           </div>
           <ul class="more-list">
             <li data-i18n-html="c2_l1"><strong>Composting</strong> — how to start a heap in an Icelandic climate, what belongs in it, what comes out the other end, and how to use it.</li>
@@ -399,16 +410,16 @@
   </div>
 
   <div class="row">
-    <div class="row-media m1" role="img" aria-label="A Climate Cafe in a public library"></div>
+    <div class="row-media m1" role="img" aria-label="A Climate Café at Gerðuberg library, speakers standing in front of shelves of jars, vegetables and books"></div>
     <div class="row-body">
       <h3 data-i18n="c1_h">Climate Cafés — where climate concern becomes local action</h3>
       <p data-i18n="c1_p">A facilitated public conversation that holds two things at once: room for worry, grief and hope, and a learning-by-doing session that ends by naming something people can actually do. Free, all ages, open to everyone — and deliberately held in libraries, because a library is somewhere people already go without needing a reason.</p>
       <div class="row-tag"><b data-i18n="c1_fl">Delivered with</b><span data-i18n="c1_f">Public libraries in Reykjavík and Akureyri, and Gróandi in Ísafjörður</span></div>
       <a class="fb-link" href="https://www.facebook.com/ClimateCafeIceland" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v6h4v-6h3l1-4h-4V8z"/></svg><span data-i18n="cc_fb">Follow Climate Café Iceland on Facebook</span></a>
       <details class="more">
-        <summary><span data-i18n="more_2">More about the cafés — and what happened</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <summary><span data-i18n="more_2">More about the cafés</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
         <div class="more-body">
-          <p data-i18n="c1_x">Each café had its own theme and its own paid local co-facilitator — a grower, an artist, a researcher, an organiser — so every event brought a different kind of knowledge into the room. Eleven local collaborators were paid across the programme. Conversations were captured live by a graphic recorder, so people could see their own words on the wall by the end of the session, and participant interviews were recorded and published.</p>
+          <p data-i18n="c1_x">Each café had its own theme and its own local co-facilitator — a grower, an artist, a researcher, an organiser — so every event brought a different kind of knowledge into the room. Eleven local collaborators took part across the programme. Participant interviews were recorded and published on social media.</p>
           <div class="note cafe-note" data-i18n-html="cc_note"><b>Who made it, and how it was funded.</b> Climate Café Iceland was developed by Green Wellbeing's founder, Marina Ermina, together with Marissa Sigrún Pinal. The 2024 programme ran under Amtsbókasafnið's application to Bókasafnasjóður and was delivered with Iceland's public libraries and Gróandi in Ísafjörður. We say this plainly because funders check, and because the libraries earned the credit.</div>
           <div class="events">
             <div class="event"><img src="photos/ev-gerduberg.jpg" alt="Climate Café at Gerðuberg library" loading="lazy">
@@ -439,7 +450,7 @@
           <ul class="more-list" style="margin-top:22px">
             <li data-i18n-html="c1_l1"><strong>Ísafjörður</strong> — the Westfjords, listed by Ísafjarðarbær municipality. Getting the programme out of the capital was the point, not a bonus.</li>
             <li data-i18n-html="c1_l2"><strong>Who came</strong> — university students, families, long-time residents, and people living in Iceland but born elsewhere. Sixty to seventy people across the programme.</li>
-            <li data-i18n-html="c1_l3"><strong>What is left behind</strong> — a published final report, recorded participant interviews, and the graphic recording from each session.</li>
+            <li data-i18n-html="c1_l3"><strong>What is left behind</strong> — a published final report and participant interviews shared on social media.</li>
           </ul>
         </div>
       </details>
@@ -508,7 +519,7 @@
 <section id="about">
   <div class="wrap">
     <div class="kicker" data-i18n="ab_label">About us</div>
-    <h2 data-i18n="ab_h">Who we are and what we exist to do</h2>
+    <h2 data-i18n="ab_h">Who we are</h2>
     <div class="gov-grid">
       <div class="gov-body">
         <p data-i18n="ab_intro">Green Wellbeing is a registered Icelandic almannaheillafélag — a public-benefit organisation with statutes, an elected board and an appointed auditor. We are deliberately small: what we offer funders and partners is a tested method, careful documentation, and a habit of paying the local people who make each event work.</p>
@@ -562,7 +573,7 @@
       <div class="person">
         <div class="role" data-i18n="p2_r">Regenerative farmer and gardener</div>
         <h3>Dawid Skrzypek</h3>
-        <p data-i18n="p2_p">Dawid has worked on Reykjalundur farm in the south of Iceland since 2020, from the very start of the project, and knows every side of growing food in a Nordic climate. He has run a number of educational workshops there and at Seljagarður community garden — on no-dig gardening, building composting systems, permaculture gardening and the importance of regenerative farming, including what farming in Iceland takes. He trained in permaculture design with Geoff Lawton and takes a hands-on approach to everything — plants and soil alike. What drives him is growing food locally with care for the soil and the environment, and showing others why that respect for nature matters.</p>
+        <p data-i18n="p2_p">Dawid is a regenerative farmer and gardener. Since 2020 he has worked on Reykjalundur farm in the south of Iceland, from the very start of the project, and knows every side of growing food in a Nordic climate. He has run a number of educational workshops there and at Seljagarður community garden — on no-dig gardening, building composting systems, permaculture gardening and the importance of regenerative farming, including what farming in Iceland takes. He trained in permaculture design with Geoff Lawton and takes a hands-on approach to everything — plants and soil alike. What drives him is growing food locally with care for the soil and the environment, and showing others why that respect for nature matters.</p>
         <div class="tail" data-i18n="p2_t">Regenerative farming · permaculture design · educational workshops</div>
       </div>
 
@@ -577,7 +588,7 @@
     <div class="contact-grid">
       <div class="cbox">
         <h3 data-i18n="co1_h">Partners, funders and organisations</h3>
-        <p data-i18n="co1_p">If you run a library, a school, a community garden or an NGO and want a Climate Café in your area — or you are building a Nordic application and need an Icelandic partner with a delivered track record — write to us.</p>
+        <p data-i18n="co1_p">If you run a library, a school, a community project or an NGO and are looking for a partner experienced in environmental and wellbeing education — or you are building a Nordic application and need an Icelandic partner with a delivered track record — write to us.</p>
         <a class="big" href="mailto:mermina@icloud.com">mermina@icloud.com</a>
         <div class="cmeta" data-i18n="co1_m">Green Wellbeing fta. · Stórholt 39, 105 Reykjavík, Iceland</div>
         <a class="fb-link" href="https://www.facebook.com/GreenWellBein" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v6h4v-6h3l1-4h-4V8z"/></svg><span data-i18n="gw_fb">Green Wellbeing on Facebook</span></a>
@@ -618,7 +629,7 @@
       fk_reg:"Skráning", fn_reg:"Green Wellbeing fta., í fyrirtækjaskrá",
       fk_gov:"Stjórn", fv_gov:"Þriggja manna stjórn", fn_gov:"Auk varamanns og skoðunarmanns. Samþykktir frá 10. maí 2023.",
       fk_reach:"Framkvæmt", fv_reach:"Loftslagskaffi, smiðjur og sýningar", fn_reach:"Á bókasöfnum, í grenndargörðum, á býli og í menningarhúsum, í þremur landshlutum",
-      work_label:"Hvað við gerum", work_h:"Að hlúa að fólki og landinu, eitt lítið skref í einu",
+      work_label:"Hvað við gerum", work_h:"Að hlúa að fólki og landinu,<br>ein lítil aðgerð í einu",
       work_lead:"Fólk skortir sjaldan upplýsingar um umhverfisbreytingar. Það sem vantar er leið til að bregðast við sem finnst merkingarbær — hagnýtt skref sem er nógu lítið til að hægt sé að taka það, út frá vellíðan fremur en áhyggjum. Allt sem við gerum er byggt í kringum þetta bil.",
       c1_h:"Loftslagskaffi",
       c1_p:"Opin, leidd samtöl sem halda utan um tvennt í senn: rými fyrir áhyggjur, sorg og von, og þverfaglega smiðju sem endar á því að nefna eitthvað sem fólk getur raunverulega gert. Ókeypis, fyrir alla aldurshópa, opið öllum — engin þekking á umhverfismálum nauðsynleg.",
@@ -640,15 +651,15 @@
       l2_b:"<strong>Hvernig á að jarðgera og rækta lífrænt?</strong> — verkleg smiðja í Seljagarði",
       l2_c:"<strong>Hvernig geymum við matvæli?</strong> — þjóðhátíð í Norræna húsinu með GAIA",
       l2_d:"<strong>Af hverju plast?</strong> — umhverfiskvikmyndasýning í Norræna húsinu með SEEDS og GAIA",
-      more_1:"Meira um smiðjurnar", more_2:"Meira um kaffihúsin — og hvað gerðist", more_3:"Hvað við leggjum til samstarfs",
+      more_1:"Meira um smiðjurnar", more_2:"Meira um kaffihúsin", more_3:"Hvað við leggjum til samstarfs",
       c2_h:"Umhverfisfræðsla — hver lítil, hagnýt aðgerð skiptir máli",
       c2_p:"Verklegar smiðjur í grenndargarði í Reykjavík og á býli sem stundar endurnýjandi landbúnað: hvernig á að jarðgera og hvernig á að rækta án uppstungu, á forsendum permakúltúrs. Samhliða því smiðjur um það hvernig maður byrjar að rækta frá grunni, fyrir þau sem aldrei hafa ræktað neitt, náttúrustarf fyrir börn og smiðjur um að geyma mat og kryddjurtir úr nærumhverfinu.",
       c2_fl:"Hvar", c2_f:"Seljagarður grenndargarður · Norræna húsið · Reykjalundur, býli í endurnýjandi landbúnaði · Rauði krossinn á Íslandi",
-      c2_x:"Allt er verklegt og ókeypis. Fólk fer heim eftir að hafa gert hlutinn, ekki eftir að hafa heyrt um hann — beði snúið, beð byggt, krukku fyllt.",
-      w0:"Hvítlaukur og rauðlaukur teknir upp úr beði sem aldrei hefur verið stungið upp — bara molta og trjákurl lagt ofan á, ár eftir ár",
-      w1:"Að flétta úr greinum, lúpínu og því sem garðurinn gaf þann morguninn — fjölskyldur að vinna hlið við hlið, ekki börn sem skilað er af sér",
-      w2:"Það sem þau bjuggu til. Hvert og eitt ólíkt, hvert og eitt tekið með heim",
-      w4:"Garðurinn sjálfur — gróðurhúsið, bekkurinn sem er líka vinnuborð, og blómin sem allir tína úr",
+      c2_x:"Smiðjurnar okkar eru verklegar og opnar fólki á öllum aldri og með ólíkan bakgrunn.",
+      w0:"Seljagarður grenndargarður og Reykjalundur, býli í endurnýjandi landbúnaði — fræðsla um garðyrkju að hætti permakúltúrs, staðbundin matvælakerfi fyrir norræna sjálfbærni og skoðunarferðir um búið",
+      w1:"Seljagarður grenndargarður — náttúruföndur og náttúrulegt útileiksvæði fyrir börn, fléttað úr greinum, lúpínu og villiblómum og leikrými byggð úr trjábolum og greinum",
+      w2:"Norræna húsið — náttúruföndur fyrir börn, þar á meðal börn af erlendum uppruna og á flótta; náttúran þekkir engar hindranir og gefur öllum tilfinningu fyrir því að tilheyra",
+      w4:"Staðbundin samfélagsverkefni — að geyma mat, kryddjurtir og þang",
       c2_l1:"<strong>Jarðgerð</strong> — hvernig á að byrja í íslensku loftslagi, hvað má fara í hauginn, hvað kemur út úr honum og hvernig það er notað.",
       c2_l2:"<strong>Ræktun án uppstungu, á forsendum permakúltúrs</strong> — beð byggð í lögum í stað þess að snúa jarðveginum, svo jarðvegslífið fái að vera í friði og vinni verkið.",
       c2_l3:"<strong>Hvernig á að rækta</strong> — fyrir þau sem byrja með ekkert: hvað á að sá og hvenær, hvað vex í raun hér, og hvað á að gera þegar það gerir það ekki.",
@@ -658,7 +669,7 @@
       c2_l7:"<strong>Sjálfbærar og fjölmenningarlegar borgir</strong> — smiðja í Borgarbókasafninu, með SEEDS Iceland.",
       c1_h:"Loftslagskaffi — þar sem áhyggjur af loftslaginu verða að aðgerðum í nærsamfélaginu",
       c1_p:"Leitt, opið samtal sem heldur utan um tvennt í senn: rými fyrir áhyggjur, sorg og von, og verklega lotu sem endar á því að nefna eitthvað sem fólk getur raunverulega gert. Ókeypis, fyrir alla aldurshópa, opið öllum — og haldið á bókasöfnum af ásettu ráði, því bókasafn er staður sem fólk kemur á hvort eð er, án þess að þurfa ástæðu.",
-      c1_x:"Hvert kaffihús hafði sitt þema og sinn greidda samstarfsaðila í heimabyggð — ræktanda, listamann, fræðimann, skipuleggjanda — svo hver viðburður bæri nýja þekkingu inn í rýmið. Ellefu samstarfsaðilar fengu greitt yfir verkefnið. Samtölin voru teiknuð upp jafnóðum, svo fólk sæi eigin orð á veggnum í lok lotunnar, og viðtöl við þátttakendur voru tekin upp og birt.",
+      c1_x:"Hvert kaffihús hafði sitt þema og sinn samstarfsaðila í heimabyggð — ræktanda, listamann, fræðimann, skipuleggjanda — svo hver viðburður bar nýja þekkingu inn í rýmið. Ellefu samstarfsaðilar í heimabyggð tóku þátt í verkefninu. Viðtöl við þátttakendur voru tekin upp og birt á samfélagsmiðlum.",
       cc_fb:"Fylgstu með Loftslagskaffi á Íslandi á Facebook",
       gw_fb:"Green Wellbeing á Facebook",
       ft_gw:"Green Wellbeing á Facebook",
@@ -678,7 +689,7 @@
       ev6_p:"Framkvæmdahlutinn. Grænmeti og kryddjurtir tíndar í Gróanda-garðinum, þvegnar, skornar og eldaðar saman við sama borð og síðan deilt — og samtalið hélt áfram yfir matnum.",
       c1_l1:"<strong>Ísafjörður</strong> — Vestfirðir, skráð hjá Ísafjarðarbæ. Að koma verkefninu út fyrir höfuðborgina var markmiðið, ekki bónus.",
       c1_l2:"<strong>Hverjir komu</strong> — háskólanemar, fjölskyldur, heimafólk og fólk sem býr á Íslandi en er fætt annars staðar. Sextíu til sjötíu manns yfir verkefnið.",
-      c1_l3:"<strong>Hvað stendur eftir</strong> — útgefin lokaskýrsla, upptekin viðtöl við þátttakendur og teiknuð samantekt frá hverri lotu.",
+      c1_l3:"<strong>Hvað stendur eftir</strong> — útgefin lokaskýrsla og viðtöl við þátttakendur sem birt voru á samfélagsmiðlum.",
       c3_h:"Norrænt samstarf — opin fyrir köllum",
       c3_p:"Við leitum að norrænum og evrópskum samstarfsaðilum, og við erum tilbúin að vera það sjálf. Green Wellbeing er skráð almannaheillafélag með samþykktir, stjórn, skoðunarmann og framkvæmt verkefni að baki — allt sem aðalumsækjandi þarf frá samstarfsaðila, og hægt að ganga frá á hálfum mánuði fremur en ársfjórðungi.",
       c3_fl:"Í samstarfi núna", c3_f:"Launch Pad Finland ry (FI) · Co-literate (DK)",
@@ -691,7 +702,7 @@
       p1_r:"Stofnandi og formaður",
       p1_p:"Marina er hug- og líkamsmeðferðaraðili, menntuð í Evrópu, á Indlandi og í Nepal, og hefur haldið vellíðunarsmiðjur frá árinu 2014. Hún lauk MA-prófi í umhverfis- og auðlindafræði frá Háskóla Íslands, þar sem rannsókn hennar fjallaði um vellíðan og vistfræðilega sjálfbærni á Norðurlöndum. Hún er kennari að mennt og Waldorf-kennari og hefur undanfarin ár þróað Loftslagskaffi á Íslandi. Marina elskar garðyrkju, að tína villtar jurtir og að geyma mat. Starf hennar sprettur af einni sannfæringu: að vellíðan fólks og náttúran séu samofin — og að með því að hlúa að náttúrunni, og kenna öðrum það, varðveitum við hana fyrir komandi kynslóðir.",
       p1_t:"Hug- og líkamsmeðferð · umhverfisrannsóknir · Waldorf-kennsla · Loftslagskaffi",
-      p2_p:"Dawid hefur starfað á búinu á Reykjalundi á sunnanverðu landinu frá árinu 2020, allt frá upphafi verkefnisins, og þekkir allar hliðar matvælaræktunar í norrænu loftslagi. Hann hefur haldið ýmsar fræðslusmiðjur þar og í Seljagarði — um ræktun án uppstungu, uppbyggingu jarðgerðar, permakúltúrgarðyrkju og mikilvægi endurnýjandi landbúnaðar, meðal annars um hvað búskapur á Íslandi krefst. Hann lærði permakúltúrhönnun hjá Geoff Lawton og nálgast allt með höndunum — plöntur og jarðveg. Það sem drífur hann áfram er að rækta mat í heimabyggð af umhyggju fyrir jarðveginum og umhverfinu, og að sýna öðrum hvers vegna sú virðing fyrir náttúrunni skiptir máli.",
+      p2_p:"Dawid er bóndi í endurnýjandi landbúnaði og garðyrkjumaður. Frá árinu 2020 hefur hann starfað á búinu á Reykjalundi á sunnanverðu landinu, allt frá upphafi verkefnisins, og þekkir allar hliðar matvælaræktunar í norrænu loftslagi. Hann hefur haldið ýmsar fræðslusmiðjur þar og í Seljagarði — um ræktun án uppstungu, uppbyggingu jarðgerðar, permakúltúrgarðyrkju og mikilvægi endurnýjandi landbúnaðar, meðal annars um hvað búskapur á Íslandi krefst. Hann lærði permakúltúrhönnun hjá Geoff Lawton og nálgast allt með höndunum — plöntur og jarðveg. Það sem drífur hann áfram er að rækta mat í heimabyggð af umhyggju fyrir jarðveginum og umhverfinu, og að sýna öðrum hvers vegna sú virðing fyrir náttúrunni skiptir máli.",
       p4_p:"Marissa er með meistaragráðu í umhverfis- og auðlindafræði frá Háskóla Íslands, með áherslu á landnotkun og hálendi Íslands, og er rannsakandi í PHOENIX, alþjóðlegu verkefni sem Háskóli Íslands leiðir hér á landi. Í því starfi hefur hún öðlast mikla reynslu af því að miðla þekkingu og leiða umræður um flókin málefni. Hún starfar einnig á leikskóla sem stuðningsfulltrúi, hópstjóri og leiðbeinandi og er menntaður jógakennari. Hún þróaði Loftslagskaffi á Íslandi ásamt Marinu og leggur mikla áherslu á að leggja sitt af mörkum til samfélagsins.",
       p2_r:"Bóndi í endurnýjandi landbúnaði og garðyrkjumaður", p4_r:"Meðhöfundur Loftslagskaffis á Íslandi",
       p2_t:"Endurnýjandi landbúnaður · permakúltúrhönnun · fræðslusmiðjur", p4_t:"Rannsóknir á landnotkun · umræðustjórnun · leikskólastarf · jóga · Loftslagskaffi",
@@ -703,7 +714,7 @@
       pu_3:"Styrkja nærsamfélög og efla þátttöku — ungs fólks, eldra fólks og fatlaðs fólks, og fólks af ólíkum þjóðernum, kynþáttum og kynjum.",
       pu_4:"Koma af stað og hvetja til „bottom-up“ verkefna sem miða að jákvæðum lausnum í menntun, umhverfismálum, samþættingu, heilsu, velferð og friðaruppbyggingu.",
       pu_5:"Efla útinám og náttúrutengda fræðslu, sjálfbæran lífsstíl, vistvæna garðyrkju og vistvænan búskap — jafnt í borg sem í sveit.",
-      ab_label:"Um okkur", ab_h:"Hver við erum og til hvers félagið er",
+      ab_label:"Um okkur", ab_h:"Hver við erum",
       ab_intro:"Green Wellbeing er skráð íslenskt almannaheillafélag með samþykktir, kjörna stjórn og skoðunarmann. Við erum meðvitað lítil: það sem við bjóðum styrkveitendum og samstarfsaðilum er reynd aðferð, vönduð skráning og sá vani að greiða heimafólkinu sem gerir hvern viðburð mögulegan.",
       pu_sum:"Að vekja athygli á og fræða um umhverfis-, félags-, menningar-, heilsu-, velferðar- og friðarmál og efla þátttöku fólks af öllum uppruna — til að skapa virka borgaravitund og fjölbreytt, sjálfbær samfélög.",
       pu_more:"Tilgangurinn eins og hann er skráður í samþykktum",
@@ -714,7 +725,7 @@
       id_sign:"Undirritun", id_sign_v:"Meirihluti stjórnar sameiginlega",
       co_label:"Hafa samband", co_h:"Heyrðu í okkur",
       co1_h:"Samstarfsaðilar, styrkveitendur og samtök",
-      co1_p:"Ef þú rekur bókasafn, skóla, grenndargarð eða félagasamtök og vilt fá Loftslagskaffi í þitt hverfi — eða ert að byggja upp norræna umsókn og vantar íslenskan samstarfsaðila með raunverulega reynslu — sendu okkur línu.",
+      co1_p:"Ef þú rekur bókasafn, skóla, samfélagsverkefni eða félagasamtök og leitar að samstarfsaðila með reynslu af umhverfis- og vellíðunarfræðslu — eða ert að byggja upp norræna umsókn og vantar íslenskan samstarfsaðila með raunverulega reynslu — sendu okkur línu.",
       co1_m:"Green Wellbeing fta. · Stórholt 39, 105 Reykjavík",
       co2_h:"Komdu á Loftslagskaffi",
       co2_p:"Loftslagskaffi er ókeypis og opið öllum — engin þekking á umhverfismálum nauðsynleg og engin krafa um að kalla sig aðgerðasinna. Viðburðir eru auglýstir á Facebook-síðunni okkar.",
@@ -900,6 +911,36 @@
 
   labelTiles();
   document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => setTimeout(labelTiles, 0)));
+})();
+</script>
+
+<script>
+/* People bios — clamp each to about a third, with "Read more" to expand */
+(function(){
+  const T = { en:{ more:'Read more', less:'Show less' }, is:{ more:'Lesa meira', less:'Sýna minna' } };
+  const t = k => (T[document.documentElement.lang] || T.en)[k];
+  const items = [...document.querySelectorAll('.person > p')].map(p => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'bio-more'; b.setAttribute('aria-expanded','false');
+    p.classList.add('clamp'); p.after(b);
+    b.addEventListener('click', () => {
+      const open = !p.classList.toggle('clamp');
+      b.setAttribute('aria-expanded', String(open));
+      render();
+    });
+    return { p, b };
+  });
+  function render(){
+    items.forEach(({ p, b }) => {
+      const open = !p.classList.contains('clamp');
+      b.textContent = open ? t('less') : t('more');
+      b.hidden = !open && p.scrollHeight <= p.clientHeight + 2;   // short bio? no button
+    });
+  }
+  render();
+  addEventListener('resize', render);
+  if (document.fonts) document.fonts.ready.then(render);
+  document.querySelectorAll('.lang button').forEach(x => x.addEventListener('click', () => setTimeout(render, 0)));
 })();
 </script>
 </body>
