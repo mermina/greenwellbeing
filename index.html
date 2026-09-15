@@ -170,6 +170,7 @@
   @media(max-width:760px){.gallery{grid-template-columns:1fr}.gallery img{height:230px}}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:52px}
   @media(max-width:880px){.two{grid-template-columns:1fr;gap:34px}}
+  .two.one{grid-template-columns:1fr;max-width:760px}
   .listbox ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:0}
   .listbox li{font-size:.95rem;line-height:1.6;color:var(--muted);padding:14px 0;border-bottom:1px solid var(--line)}
   .listbox li:first-child{border-top:1px solid var(--line)}
@@ -289,6 +290,8 @@
   .fb-link:hover{text-decoration:underline}
   .fb-link svg{width:16px;height:16px;fill:currentColor;flex:0 0 auto}
   .row-body .fb-link{margin-top:16px}
+  .org-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(226,88,39,.45);text-decoration-thickness:1px;text-underline-offset:3px;transition:color .15s,text-decoration-color .15s}
+  .org-link:hover{color:var(--orange);text-decoration-color:var(--orange)}
   footer{background:var(--forest);color:rgba(255,255,255,.6);padding:46px 0;font-size:13px;font-weight:300}
   .foot-in{max-width:1120px;margin:0 auto;padding:0 26px;display:flex;flex-wrap:wrap;gap:14px 30px;justify-content:space-between;align-items:center}
   footer a{color:rgba(255,255,255,.85);text-decoration:none}
@@ -359,7 +362,7 @@
     </div>
     <div>
       <div class="fact-k" data-i18n="fk_reach">Delivered</div>
-      <div class="fact-v" data-i18n="fv_reach">Cafés, workshops and screenings</div>
+      <div class="fact-v" data-i18n="fv_reach">Climate Cafés, workshops and film screenings</div>
       <div class="fact-n" data-i18n="fn_reach">In libraries, community gardens, on a farm and in cultural houses, across three regions of Iceland</div>
     </div>
   </div>
@@ -380,29 +383,29 @@
     <div class="row-body">
       <h3 data-i18n="c2_h">Environmental education — every small, practical action makes a difference</h3>
       <p data-i18n="c2_p">Practical workshops in a Reykjavík community garden and on a regenerative farm: how to compost, and how to grow a no-dig garden the permaculture way. Alongside them, community-garden sessions on how to garden from scratch for people who have never grown anything, nature activities for children, and workshops on preserving local food and herbs.</p>
-      <div class="row-tag"><b data-i18n="c2_fl">Where</b><span data-i18n="c2_f">Seljagarður community garden · the Nordic House · Reykjalundur regenerative farm · Red Cross Iceland</span></div>
+      <div class="row-tag"><b data-i18n="c2_fl">Where</b><span data-i18n-html="c2_f"><a class="org-link" href="https://seljagardur.is/" target="_blank" rel="noopener">Seljagarður community garden</a> · the <a class="org-link" href="https://nordichouse.is/" target="_blank" rel="noopener">Nordic House</a> · <a class="org-link" href="https://reykjalundurgardyrkja.is/" target="_blank" rel="noopener">Reykjalundur regenerative farm</a> · <a class="org-link" href="https://www.raudikrossinn.is/" target="_blank" rel="noopener">Red Cross Iceland</a></span></div>
       <details class="more">
         <summary><span data-i18n="more_1">More about the workshops</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
         <div class="more-body">
           <p data-i18n="c2_x">Our workshops are practical and hands-on, and open to people of all ages and backgrounds.</p>
           <div class="wkgal">
             <figure data-gallery="ee-1" data-count="5" data-title="g1"><div class="shot"><img src="photos/wk-weaving.jpg" alt="Children and adults weaving with sticks and wildflowers at a garden table" loading="lazy"></div>
-              <figcaption data-i18n="w1">Seljagarður community garden — nature-craft and a natural outdoor playground for children, weaving with sticks, lupins and wildflowers and building play spaces from logs and branches</figcaption></figure>
+              <figcaption data-i18n-html="w1"><a class="org-link" href="https://seljagardur.is/" target="_blank" rel="noopener">Seljagarður community garden</a> — nature-craft and a natural outdoor playground for children, weaving with sticks, lupins and wildflowers and building play spaces from logs and branches</figcaption></figure>
             <figure data-gallery="ee-2" data-count="5" data-title="g2"><div class="shot"><img src="photos/wk-houses.jpg" alt="Eight small woven houses made from grass, flowers and card" loading="lazy"></div>
-              <figcaption data-i18n="w2">The Nordic House — nature-craft activities for children, including those from immigrant and refugee backgrounds; nature knows no barriers and gives everyone a sense of belonging</figcaption></figure>
+              <figcaption data-i18n-html="w2"><a class="org-link" href="https://nordichouse.is/" target="_blank" rel="noopener">The Nordic House</a> — nature-craft activities for children, including those from immigrant and refugee backgrounds; nature knows no barriers and gives everyone a sense of belonging</figcaption></figure>
             <figure data-gallery="ee-3" data-count="7" data-title="g3"><div class="shot"><img src="photos/wk-harvest.jpg" alt="Lifting garlic and red onions from a mulched raised bed" loading="lazy"></div>
-              <figcaption data-i18n="w0">Seljagarður community garden and Reykjalundur regenerative farm — permaculture gardening education, local food systems for Nordic sustainability, and farm tours</figcaption></figure>
+              <figcaption data-i18n-html="w0"><a class="org-link" href="https://seljagardur.is/" target="_blank" rel="noopener">Seljagarður community garden</a> and <a class="org-link" href="https://reykjalundurgardyrkja.is/" target="_blank" rel="noopener">Reykjalundur regenerative farm</a> — permaculture gardening education, local food systems for Nordic sustainability, and farm tours</figcaption></figure>
             <figure class="wide" data-gallery="ee-4" data-count="8" data-title="g4"><div class="shot"><img src="photos/wk-greenhouse.jpg" alt="The community garden greenhouse with wildflowers and woven work on the bench" loading="lazy"></div>
               <figcaption data-i18n="w4">Local community projects — preserving food, herbs and seaweed</figcaption></figure>
           </div>
           <ul class="more-list">
-            <li data-i18n-html="c2_l1"><strong>Composting</strong> — how to start a heap in an Icelandic climate, what belongs in it, what comes out the other end, and how to use it.</li>
-            <li data-i18n-html="c2_l2"><strong>No-dig growing, the permaculture way</strong> — building beds by layering rather than turning the soil, so the soil life stays where it is and does the work for you.</li>
+            <li data-i18n-html="c2_l1"><strong>Composting</strong> — at <a class="org-link" href="https://seljagardur.is/" target="_blank" rel="noopener">Seljagarður</a>: how to start a heap in an Icelandic climate, what belongs in it, what comes out the other end, and how to use it.</li>
+            <li data-i18n-html="c2_l2"><strong>No-dig growing, the permaculture way</strong> — building beds at <a class="org-link" href="https://seljagardur.is/" target="_blank" rel="noopener">Seljagarður</a> by layering rather than turning the soil, so the soil life stays where it is and does the work for you.</li>
             <li data-i18n-html="c2_l3"><strong>How to garden</strong> — for people starting with nothing: what to sow and when, what actually grows here, and what to do when it does not.</li>
             <li data-i18n-html="c2_l4"><strong>Nature activities for children</strong> — outdoor learning in the garden, run so that families come together rather than dropping children off.</li>
-            <li data-i18n-html="c2_l5"><strong>How to preserve food</strong> — folk festival at the Nordic House, with GAIA.</li>
-            <li data-i18n-html="c2_l6"><strong>Why plastic?</strong> — environmental film screening at the Nordic House, with SEEDS Iceland and GAIA.</li>
-            <li data-i18n-html="c2_l7"><strong>Sustainable and intercultural cities</strong> — workshop at Reykjavík City Library, with SEEDS Iceland.</li>
+            <li data-i18n-html="c2_l5"><strong>How to preserve food</strong> — folk festival at the <a class="org-link" href="https://nordichouse.is/" target="_blank" rel="noopener">Nordic House</a>, with GAIA.</li>
+            <li data-i18n-html="c2_l6"><strong>Why plastic?</strong> — environmental film screening at the <a class="org-link" href="https://nordichouse.is/" target="_blank" rel="noopener">Nordic House</a>, with <a class="org-link" href="https://www.seeds.is/" target="_blank" rel="noopener">SEEDS Iceland</a> and GAIA.</li>
+            <li data-i18n-html="c2_l7"><strong>Sustainable and intercultural cities</strong> — workshop at <a class="org-link" href="https://borgarbokasafn.is/" target="_blank" rel="noopener">Reykjavík City Library</a>, with <a class="org-link" href="https://www.seeds.is/" target="_blank" rel="noopener">SEEDS Iceland</a>.</li>
           </ul>
         </div>
       </details>
@@ -414,44 +417,43 @@
     <div class="row-body">
       <h3 data-i18n="c1_h">Climate Cafés — where climate concern becomes local action</h3>
       <p data-i18n="c1_p">A facilitated public conversation that holds two things at once: room for worry, grief and hope, and a learning-by-doing session that ends by naming something people can actually do. Free, all ages, open to everyone — and deliberately held in libraries, because a library is somewhere people already go without needing a reason.</p>
-      <div class="row-tag"><b data-i18n="c1_fl">Delivered with</b><span data-i18n="c1_f">Public libraries in Reykjavík and Akureyri, and Gróandi in Ísafjörður</span></div>
+      <div class="row-tag"><b data-i18n="c1_fl">Delivered with</b><span data-i18n-html="c1_f"><a class="org-link" href="https://borgarbokasafn.is/" target="_blank" rel="noopener">Reykjavík City Library</a> (Borgarbókasafnið), <a class="org-link" href="https://www.akureyri.is/amtsbokasafnid" target="_blank" rel="noopener">Amtsbókasafnið</a> in Akureyri, and <a class="org-link" href="https://www.groandi.org/en" target="_blank" rel="noopener">Gróandi</a> in Ísafjörður</span></div>
       <a class="fb-link" href="https://www.facebook.com/ClimateCafeIceland" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v6h4v-6h3l1-4h-4V8z"/></svg><span data-i18n="cc_fb">Follow Climate Café Iceland on Facebook</span></a>
       <details class="more">
         <summary><span data-i18n="more_2">More about the cafés</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
         <div class="more-body">
           <p data-i18n="c1_x">Each café had its own theme and its own local co-facilitator — a grower, an artist, a researcher, an organiser — so every event brought a different kind of knowledge into the room. Eleven local collaborators took part across the programme. Participant interviews were recorded and published on social media.</p>
-          <div class="note cafe-note" data-i18n-html="cc_note"><b>Who made it, and how it was funded.</b> Climate Café Iceland was developed by Green Wellbeing's founder, Marina Ermina, together with Marissa Sigrún Pinal. The 2024 programme ran under Amtsbókasafnið's application to Bókasafnasjóður and was delivered with Iceland's public libraries and Gróandi in Ísafjörður. We say this plainly because funders check, and because the libraries earned the credit.</div>
+          <div class="note cafe-note" data-i18n-html="cc_note"><b>Who made it, and how it was funded.</b> Climate Café Iceland was developed by Green Wellbeing's founder, Marina Ermina, together with Marissa Sigrún Pinal. The 2024 programme ran under <a class="org-link" href="https://borgarbokasafn.is/" target="_blank" rel="noopener">Reykjavík City Library</a>'s application to Bókasafnasjóður and was delivered with Iceland's public libraries and <a class="org-link" href="https://www.groandi.org/en" target="_blank" rel="noopener">Gróandi</a> in Ísafjörður. We say this plainly because funders check, and because the libraries earned the credit.</div>
           <div class="events">
-            <div class="event"><img src="photos/ev-gerduberg.jpg" alt="Climate Café at Gerðuberg library" loading="lazy">
-              <div class="ec"><div class="ew" data-i18n="ev1_w">Reykjavík · September 2024</div>
-                <h4 data-i18n="ev1_h">Gerðuberg</h4>
-                <p data-i18n="ev1_p">A panel around a table of vegetables in the children's library — growers and organisers on what actually grows here, and who gets to grow it.</p></div></div>
-            <div class="event"><img src="photos/ev-ulfsdalur.jpg" alt="Climate Café panel, 14 November 2024" loading="lazy">
-              <div class="ec"><div class="ew" data-i18n="ev2_w">Reykjavík · 14 November 2024</div>
-                <h4 data-i18n="ev2_h">Activism and resilience</h4>
+            <div class="event"><img src="photos/ev-gerduberg.jpg" alt="Climate Café at Borgarbókasafnið Gerðubergi" loading="lazy">
+              <div class="ec"><div class="ew" data-i18n-html="ev1_w"><a class="org-link" href="https://borgarbokasafn.is/en/library/gerduberg-city-library" target="_blank" rel="noopener">Borgarbókasafnið Gerðubergi</a> · Reykjavík</div>
+                <h4 data-i18n="ev1_h">Holistic Environmentalism and Food Preservation</h4>
+                <p data-i18n-html="ev1_p">A panel on holistic environmentalism around a table of vegetables in the children's library, and a hands-on session on preserving food — organic produce from <a class="org-link" href="https://seljagardur.is/" target="_blank" rel="noopener">Seljagarður</a> and <a class="org-link" href="https://reykjalundurgardyrkja.is/" target="_blank" rel="noopener">Reykjalundur</a>, and how to keep what grows here through the winter.</p></div></div>
+            <div class="event"><img src="photos/ev-ulfsdalur.jpg" alt="Climate Café panel at Borgarbókasafnið Úlfarsárdal" loading="lazy">
+              <div class="ec"><div class="ew" data-i18n-html="ev2_w"><a class="org-link" href="https://borgarbokasafn.is/en/library/ulfarsardalur-city-library" target="_blank" rel="noopener">Borgarbókasafnið Úlfarsárdal</a> · Reykjavík</div>
+                <h4 data-i18n="ev2_h">Activism and Resilience</h4>
                 <p data-i18n="ev2_p">An anthropology professor, an artist, an environmental adviser and a civil-society chair on where activism gets its strength and how people keep going — the whole conversation drawn live on the wall behind them.</p></div></div>
-            <div class="event"><img src="photos/ev-akureyri.jpg" alt="Climate Café in Akureyri" loading="lazy">
-              <div class="ec"><div class="ew" data-i18n="ev3_w">Akureyri · September 2024</div>
-                <h4 data-i18n="ev3_h">Akureyri</h4>
-                <p data-i18n="ev3_p">North Iceland, with the town's public library — small tables, worksheets and coffee, and the fjord through the window.</p></div></div>
-            <div class="event"><img src="photos/ev-grofin.jpg" alt="Climate Café at Grófin library" loading="lazy">
-              <div class="ec"><div class="ew" data-i18n="ev4_w">Reykjavík · December 2024</div>
-                <h4 data-i18n="ev4_h">Grófin</h4>
-                <p data-i18n="ev4_p">The city's central library in the middle of December — families, children and adults in the same room, which is what "all ages" is supposed to mean.</p></div></div>
+            <div class="event"><img src="photos/ev-amts-emotions.jpg" alt="Sitting together in a circle at Amtsbókasafnið, Akureyri" loading="lazy">
+              <div class="ec"><div class="ew" data-i18n-html="ev3_w"><a class="org-link" href="https://www.akureyri.is/amtsbokasafnid" target="_blank" rel="noopener">Amtsbókasafnið</a> · Akureyri</div>
+                <h4 data-i18n="ev3_h">Amtsbókasafnið Emotions</h4>
+                <p data-i18n="ev3_p">The feeling half of the café — people sitting together in a circle, sharing how environmental change feels to them, with room for worry, grief and hope.</p></div></div>
+            <div class="event"><img src="photos/ev-amts-actions.jpg" alt="Worksheets on the table at Amtsbókasafnið, Akureyri" loading="lazy">
+              <div class="ec"><div class="ew" data-i18n-html="ev4_w"><a class="org-link" href="https://www.akureyri.is/amtsbokasafnid" target="_blank" rel="noopener">Amtsbókasafnið</a> · Akureyri</div>
+                <h4 data-i18n="ev4_h">Amtsbókasafnið Actions</h4>
+                <p data-i18n="ev4_p">The doing half — ideas and questions written down together at the tables, and turned into practical steps people could take in their own lives and community.</p></div></div>
             <div class="event"><img src="photos/ev-groandi-emotions.jpg" style="object-position:center 30%" alt="Painting with watercolours and leaves around a long table at Gróandi" loading="lazy">
-              <div class="ec"><div class="ew" data-i18n="ev5_w">Ísafjörður · Gróandi</div>
+              <div class="ec"><div class="ew" data-i18n-html="ev5_w"><a class="org-link" href="https://www.groandi.org/en" target="_blank" rel="noopener">Gróandi</a> · Ísafjörður</div>
                 <h4 data-i18n="ev5_h">Gróandi Emotions</h4>
                 <p data-i18n="ev5_p">The feeling half of the café. Around one long table, people painted what environmental change feels like to them — with watercolours, pencils and leaves gathered from the garden — before anyone was asked to do anything about it.</p></div></div>
             <div class="event"><img src="photos/ev-groandi-actions.jpg" style="object-position:center 52%" alt="Preparing freshly picked greens and herbs together at Gróandi" loading="lazy">
-              <div class="ec"><div class="ew" data-i18n="ev6_w">Ísafjörður · Gróandi</div>
+              <div class="ec"><div class="ew" data-i18n-html="ev6_w"><a class="org-link" href="https://www.groandi.org/en" target="_blank" rel="noopener">Gróandi</a> · Ísafjörður</div>
                 <h4 data-i18n="ev6_h">Gróandi Actions</h4>
                 <p data-i18n="ev6_p">The doing half. Greens and herbs picked in the Gróandi garden, washed, chopped and cooked together at the same table, then shared — with the conversation carrying on over the food.</p></div></div>
+            <div class="event"><img src="photos/ev-grofin.jpg" alt="Christmas gift exchange at Borgarbókasafnið Grófinni" loading="lazy">
+              <div class="ec"><div class="ew" data-i18n-html="ev7_w"><a class="org-link" href="https://borgarbokasafn.is/en/library/grofin-city-library" target="_blank" rel="noopener">Borgarbókasafnið Grófinni</a> · Reykjavík</div>
+                <h4 data-i18n="ev7_h">Christmas Gift Exchange</h4>
+                <p data-i18n="ev7_p">A Christmas gift exchange at the city's central library, as a gentler alternative to holiday shopping — families, children and adults in the same room, which is what "all ages" is supposed to mean.</p></div></div>
           </div>
-          <ul class="more-list" style="margin-top:22px">
-            <li data-i18n-html="c1_l1"><strong>Ísafjörður</strong> — the Westfjords, listed by Ísafjarðarbær municipality. Getting the programme out of the capital was the point, not a bonus.</li>
-            <li data-i18n-html="c1_l2"><strong>Who came</strong> — university students, families, long-time residents, and people living in Iceland but born elsewhere. Sixty to seventy people across the programme.</li>
-            <li data-i18n-html="c1_l3"><strong>What is left behind</strong> — a published final report and participant interviews shared on social media.</li>
-          </ul>
         </div>
       </details>
     </div>
@@ -493,23 +495,14 @@
       <figure><div class="shot"><img src="photos/strip-nature.jpg" alt="The Icelandic landscape" loading="lazy"></div>
         <figcaption data-i18n="g3">The reason any of it matters — the Westfjords, on a summer evening</figcaption></figure>
     </div>
-    <div class="two">
-      <div class="listbox">
-        <h3 data-i18n="l1_h">Where the cafés ran</h3>
-        <ul>
-          <li data-i18n-html="l1_a"><strong>Reykjavík</strong> — Borgarbókasafnið Grófin, the city's central library</li>
-          <li data-i18n-html="l1_b"><strong>Akureyri</strong> — north Iceland, with the town's public library</li>
-          <li data-i18n-html="l1_c"><strong>Ísafjörður</strong> — the Westfjords, listed by Ísafjarðarbær municipality</li>
-          <li data-i18n-html="l1_d"><strong>Who came</strong> — university students, families, long-time residents, and people living in Iceland but born elsewhere</li>
-        </ul>
-      </div>
+    <div class="two one">
       <div class="listbox">
         <h3 data-i18n="l2_h">Workshops and screenings</h3>
         <ul>
-          <li data-i18n-html="l2_a"><strong>Sustainable &amp; intercultural cities</strong> — workshop at Reykjavík City Library with SEEDS Iceland</li>
-          <li data-i18n-html="l2_b"><strong>How to compost, how to grow organically</strong> — practical workshop at Seljagarður community garden</li>
-          <li data-i18n-html="l2_c"><strong>How to preserve food</strong> — folk festival at the Nordic House with GAIA</li>
-          <li data-i18n-html="l2_d"><strong>Why plastic?</strong> — environmental film screening at the Nordic House with SEEDS and GAIA</li>
+          <li data-i18n-html="l2_a"><strong>Sustainable &amp; intercultural cities</strong> — workshop at <a class="org-link" href="https://borgarbokasafn.is/" target="_blank" rel="noopener">Reykjavík City Library</a> with <a class="org-link" href="https://www.seeds.is/" target="_blank" rel="noopener">SEEDS Iceland</a></li>
+          <li data-i18n-html="l2_b"><strong>How to compost, how to grow organically</strong> — practical workshop at <a class="org-link" href="https://seljagardur.is/" target="_blank" rel="noopener">Seljagarður community garden</a></li>
+          <li data-i18n-html="l2_c"><strong>How to preserve food</strong> — folk festival at the <a class="org-link" href="https://nordichouse.is/" target="_blank" rel="noopener">Nordic House</a> with GAIA</li>
+          <li data-i18n-html="l2_d"><strong>Why plastic?</strong> — environmental film screening at the <a class="org-link" href="https://nordichouse.is/" target="_blank" rel="noopener">Nordic House</a> with <a class="org-link" href="https://www.seeds.is/" target="_blank" rel="noopener">SEEDS</a> and GAIA</li>
         </ul>
       </div>
     </div>
@@ -628,12 +621,12 @@
       fk_legal:"Rekstrarform", fv_legal:"Almannaheillafélag", fn_legal:"Skráð félag til almannaheilla á Íslandi",
       fk_reg:"Skráning", fn_reg:"Green Wellbeing fta., í fyrirtækjaskrá",
       fk_gov:"Stjórn", fv_gov:"Þriggja manna stjórn", fn_gov:"Auk varamanns og skoðunarmanns. Samþykktir frá 10. maí 2023.",
-      fk_reach:"Framkvæmt", fv_reach:"Loftslagskaffi, smiðjur og sýningar", fn_reach:"Á bókasöfnum, í grenndargörðum, á býli og í menningarhúsum, í þremur landshlutum",
+      fk_reach:"Framkvæmt", fv_reach:"Loftslagskaffi, smiðjur og kvikmyndasýningar", fn_reach:"Á bókasöfnum, í grenndargörðum, á býli og í menningarhúsum, í þremur landshlutum",
       work_label:"Hvað við gerum", work_h:"Að hlúa að fólki og landinu,<br>ein lítil aðgerð í einu",
       work_lead:"Fólk skortir sjaldan upplýsingar um umhverfisbreytingar. Það sem vantar er leið til að bregðast við sem finnst merkingarbær — hagnýtt skref sem er nógu lítið til að hægt sé að taka það, út frá vellíðan fremur en áhyggjum. Allt sem við gerum er byggt í kringum þetta bil.",
       c1_h:"Loftslagskaffi",
       c1_p:"Opin, leidd samtöl sem halda utan um tvennt í senn: rými fyrir áhyggjur, sorg og von, og þverfaglega smiðju sem endar á því að nefna eitthvað sem fólk getur raunverulega gert. Ókeypis, fyrir alla aldurshópa, opið öllum — engin þekking á umhverfismálum nauðsynleg.",
-      c1_fl:"Í samstarfi við", c1_f:"Almenningsbókasöfn í Reykjavík og á Akureyri, og Gróandi á Ísafirði",
+      c1_fl:"Í samstarfi við", c1_f:"<a class='org-link' href='https://borgarbokasafn.is/' target='_blank' rel='noopener'>Borgarbókasafn Reykjavíkur</a>, <a class='org-link' href='https://www.akureyri.is/amtsbokasafnid' target='_blank' rel='noopener'>Amtsbókasafnið</a> á Akureyri og <a class='org-link' href='https://www.groandi.org/en' target='_blank' rel='noopener'>Gróandi</a> á Ísafirði",
       c2_h:"Umhverfisfræðsla",
       c2_p:"Verklegar smiðjur og kvikmyndakvöld um jarðgerð, lífræna ræktun, matvælageymslu, plast og sjálfbært, fjölmenningarlegt borgarlíf — í samstarfi við grenndargarða, menningarhús og sjálfboðaliðasamtök, og alltaf með heimafólki sem kann efnið.",
       c2_fl:"Samstarfsaðilar", c2_f:"SEEDS Iceland · Seljagarður · Norræna húsið · GAIA · Borgarbókasafnið",
@@ -642,31 +635,31 @@
       c3_fl:"Í samstarfi við", c3_f:"Launch Pad Finland ry (FI) · Co-literate (DK)",
       rec_label:"Reynsla",
       l1_h:"Hvar kaffihúsin voru haldin",
-      l1_a:"<strong>Reykjavík</strong> — Borgarbókasafnið Grófinni, aðalsafn borgarinnar",
-      l1_b:"<strong>Akureyri</strong> — Norðurland, í samstarfi við bæjarbókasafnið",
+      l1_a:"<strong>Reykjavík</strong> — <a class='org-link' href='https://borgarbokasafn.is/en/library/gerduberg-city-library' target='_blank' rel='noopener'>Borgarbókasafnið Gerðubergi</a>, <a class='org-link' href='https://borgarbokasafn.is/en/library/ulfarsardalur-city-library' target='_blank' rel='noopener'>Borgarbókasafnið Úlfarsárdal</a> og <a class='org-link' href='https://borgarbokasafn.is/en/library/grofin-city-library' target='_blank' rel='noopener'>Borgarbókasafnið Grófinni</a>, söfn <a class='org-link' href='https://borgarbokasafn.is/' target='_blank' rel='noopener'>Borgarbókasafns Reykjavíkur</a>",
+      l1_b:"<strong>Akureyri</strong> — Norðurland, í <a class='org-link' href='https://www.akureyri.is/amtsbokasafnid' target='_blank' rel='noopener'>Amtsbókasafninu</a>",
       l1_c:"<strong>Ísafjörður</strong> — Vestfirðir, skráð hjá Ísafjarðarbæ",
       l1_d:"<strong>Hverjir komu</strong> — háskólanemar, fjölskyldur, heimafólk og fólk sem býr á Íslandi en er fætt annars staðar",
       l2_h:"Smiðjur og sýningar",
-      l2_a:"<strong>Sjálfbærar og fjölmenningarlegar borgir</strong> — smiðja í Borgarbókasafninu með SEEDS Iceland",
-      l2_b:"<strong>Hvernig á að jarðgera og rækta lífrænt?</strong> — verkleg smiðja í Seljagarði",
-      l2_c:"<strong>Hvernig geymum við matvæli?</strong> — þjóðhátíð í Norræna húsinu með GAIA",
-      l2_d:"<strong>Af hverju plast?</strong> — umhverfiskvikmyndasýning í Norræna húsinu með SEEDS og GAIA",
+      l2_a:"<strong>Sjálfbærar og fjölmenningarlegar borgir</strong> — smiðja í <a class='org-link' href='https://borgarbokasafn.is/' target='_blank' rel='noopener'>Borgarbókasafninu</a> með <a class='org-link' href='https://www.seeds.is/' target='_blank' rel='noopener'>SEEDS Iceland</a>",
+      l2_b:"<strong>Hvernig á að jarðgera og rækta lífrænt?</strong> — verkleg smiðja í <a class='org-link' href='https://seljagardur.is/' target='_blank' rel='noopener'>Seljagarði</a>",
+      l2_c:"<strong>Hvernig geymum við matvæli?</strong> — þjóðhátíð í <a class='org-link' href='https://nordichouse.is/' target='_blank' rel='noopener'>Norræna húsinu</a> með GAIA",
+      l2_d:"<strong>Af hverju plast?</strong> — umhverfiskvikmyndasýning í <a class='org-link' href='https://nordichouse.is/' target='_blank' rel='noopener'>Norræna húsinu</a> með <a class='org-link' href='https://www.seeds.is/' target='_blank' rel='noopener'>SEEDS</a> og GAIA",
       more_1:"Meira um smiðjurnar", more_2:"Meira um kaffihúsin", more_3:"Hvað við leggjum til samstarfs",
       c2_h:"Umhverfisfræðsla — hver lítil, hagnýt aðgerð skiptir máli",
       c2_p:"Verklegar smiðjur í grenndargarði í Reykjavík og á býli sem stundar endurnýjandi landbúnað: hvernig á að jarðgera og hvernig á að rækta án uppstungu, á forsendum permakúltúrs. Samhliða því smiðjur um það hvernig maður byrjar að rækta frá grunni, fyrir þau sem aldrei hafa ræktað neitt, náttúrustarf fyrir börn og smiðjur um að geyma mat og kryddjurtir úr nærumhverfinu.",
-      c2_fl:"Hvar", c2_f:"Seljagarður grenndargarður · Norræna húsið · Reykjalundur, býli í endurnýjandi landbúnaði · Rauði krossinn á Íslandi",
+      c2_fl:"Hvar", c2_f:"<a class='org-link' href='https://seljagardur.is/' target='_blank' rel='noopener'>Seljagarður grenndargarður</a> · <a class='org-link' href='https://nordichouse.is/' target='_blank' rel='noopener'>Norræna húsið</a> · <a class='org-link' href='https://reykjalundurgardyrkja.is/' target='_blank' rel='noopener'>Reykjalundur</a>, býli í endurnýjandi landbúnaði · <a class='org-link' href='https://www.raudikrossinn.is/' target='_blank' rel='noopener'>Rauði krossinn á Íslandi</a>",
       c2_x:"Smiðjurnar okkar eru verklegar og opnar fólki á öllum aldri og með ólíkan bakgrunn.",
-      w0:"Seljagarður grenndargarður og Reykjalundur, býli í endurnýjandi landbúnaði — fræðsla um garðyrkju að hætti permakúltúrs, staðbundin matvælakerfi fyrir norræna sjálfbærni og skoðunarferðir um búið",
-      w1:"Seljagarður grenndargarður — náttúruföndur og náttúrulegt útileiksvæði fyrir börn, fléttað úr greinum, lúpínu og villiblómum og leikrými byggð úr trjábolum og greinum",
-      w2:"Norræna húsið — náttúruföndur fyrir börn, þar á meðal börn af erlendum uppruna og á flótta; náttúran þekkir engar hindranir og gefur öllum tilfinningu fyrir því að tilheyra",
+      w0:"<a class='org-link' href='https://seljagardur.is/' target='_blank' rel='noopener'>Seljagarður grenndargarður</a> og <a class='org-link' href='https://reykjalundurgardyrkja.is/' target='_blank' rel='noopener'>Reykjalundur</a>, býli í endurnýjandi landbúnaði — fræðsla um garðyrkju að hætti permakúltúrs, staðbundin matvælakerfi fyrir norræna sjálfbærni og skoðunarferðir um búið",
+      w1:"<a class='org-link' href='https://seljagardur.is/' target='_blank' rel='noopener'>Seljagarður grenndargarður</a> — náttúruföndur og náttúrulegt útileiksvæði fyrir börn, fléttað úr greinum, lúpínu og villiblómum og leikrými byggð úr trjábolum og greinum",
+      w2:"<a class='org-link' href='https://nordichouse.is/' target='_blank' rel='noopener'>Norræna húsið</a> — náttúruföndur fyrir börn, þar á meðal börn af erlendum uppruna og á flótta; náttúran þekkir engar hindranir og gefur öllum tilfinningu fyrir því að tilheyra",
       w4:"Staðbundin samfélagsverkefni — að geyma mat, kryddjurtir og þang",
-      c2_l1:"<strong>Jarðgerð</strong> — hvernig á að byrja í íslensku loftslagi, hvað má fara í hauginn, hvað kemur út úr honum og hvernig það er notað.",
-      c2_l2:"<strong>Ræktun án uppstungu, á forsendum permakúltúrs</strong> — beð byggð í lögum í stað þess að snúa jarðveginum, svo jarðvegslífið fái að vera í friði og vinni verkið.",
+      c2_l1:"<strong>Jarðgerð</strong> — í <a class='org-link' href='https://seljagardur.is/' target='_blank' rel='noopener'>Seljagarði</a>: hvernig á að byrja í íslensku loftslagi, hvað má fara í hauginn, hvað kemur út úr honum og hvernig það er notað.",
+      c2_l2:"<strong>Ræktun án uppstungu, á forsendum permakúltúrs</strong> — beð byggð í lögum í <a class='org-link' href='https://seljagardur.is/' target='_blank' rel='noopener'>Seljagarði</a> í stað þess að snúa jarðveginum, svo jarðvegslífið fái að vera í friði og vinni verkið.",
       c2_l3:"<strong>Hvernig á að rækta</strong> — fyrir þau sem byrja með ekkert: hvað á að sá og hvenær, hvað vex í raun hér, og hvað á að gera þegar það gerir það ekki.",
       c2_l4:"<strong>Náttúrustarf fyrir börn</strong> — útinám í garðinum, skipulagt þannig að fjölskyldur komi saman fremur en að skila börnunum af sér.",
-      c2_l5:"<strong>Hvernig geymum við matvæli?</strong> — þjóðhátíð í Norræna húsinu, með GAIA.",
-      c2_l6:"<strong>Af hverju plast?</strong> — umhverfiskvikmyndasýning í Norræna húsinu, með SEEDS Iceland og GAIA.",
-      c2_l7:"<strong>Sjálfbærar og fjölmenningarlegar borgir</strong> — smiðja í Borgarbókasafninu, með SEEDS Iceland.",
+      c2_l5:"<strong>Hvernig geymum við matvæli?</strong> — þjóðhátíð í <a class='org-link' href='https://nordichouse.is/' target='_blank' rel='noopener'>Norræna húsinu</a>, með GAIA.",
+      c2_l6:"<strong>Af hverju plast?</strong> — umhverfiskvikmyndasýning í <a class='org-link' href='https://nordichouse.is/' target='_blank' rel='noopener'>Norræna húsinu</a>, með <a class='org-link' href='https://www.seeds.is/' target='_blank' rel='noopener'>SEEDS Iceland</a> og GAIA.",
+      c2_l7:"<strong>Sjálfbærar og fjölmenningarlegar borgir</strong> — smiðja í <a class='org-link' href='https://borgarbokasafn.is/' target='_blank' rel='noopener'>Borgarbókasafninu</a>, með <a class='org-link' href='https://www.seeds.is/' target='_blank' rel='noopener'>SEEDS Iceland</a>.",
       c1_h:"Loftslagskaffi — þar sem áhyggjur af loftslaginu verða að aðgerðum í nærsamfélaginu",
       c1_p:"Leitt, opið samtal sem heldur utan um tvennt í senn: rými fyrir áhyggjur, sorg og von, og verklega lotu sem endar á því að nefna eitthvað sem fólk getur raunverulega gert. Ókeypis, fyrir alla aldurshópa, opið öllum — og haldið á bókasöfnum af ásettu ráði, því bókasafn er staður sem fólk kemur á hvort eð er, án þess að þurfa ástæðu.",
       c1_x:"Hvert kaffihús hafði sitt þema og sinn samstarfsaðila í heimabyggð — ræktanda, listamann, fræðimann, skipuleggjanda — svo hver viðburður bar nýja þekkingu inn í rýmið. Ellefu samstarfsaðilar í heimabyggð tóku þátt í verkefninu. Viðtöl við þátttakendur voru tekin upp og birt á samfélagsmiðlum.",
@@ -674,19 +667,21 @@
       gw_fb:"Green Wellbeing á Facebook",
       ft_gw:"Green Wellbeing á Facebook",
       ft_cc:"Loftslagskaffi á Facebook",
-      cc_note:"<b>Hver gerði það og hvernig það var fjármagnað.</b> Loftslagskaffi á Íslandi var þróað af Marina Ermina, stofnanda Green Wellbeing, og Marissa Sigrún Pinal. Verkefnið 2024 var unnið á grundvelli umsóknar Amtsbókasafnsins til Bókasafnasjóðs og framkvæmt með almenningsbókasöfnum landsins og Gróanda á Ísafirði. Við segjum þetta hreint út því styrkveitendur athuga þetta — og bókasöfnin eiga heiðurinn skilið.",
-      ev1_w:"Reykjavík · september 2024", ev1_h:"Gerðuberg",
-      ev1_p:"Pallborð við borð fullt af grænmeti í barnabókasafninu — ræktendur og skipuleggjendur um hvað vex hér í raun, og hver fær að rækta það.",
-      ev2_w:"Reykjavík · 14. nóvember 2024", ev2_h:"Aðgerðir og seigla",
+      cc_note:"<b>Hver gerði það og hvernig það var fjármagnað.</b> Loftslagskaffi á Íslandi var þróað af Marina Ermina, stofnanda Green Wellbeing, og Marissa Sigrún Pinal. Verkefnið 2024 var unnið á grundvelli umsóknar <a class='org-link' href='https://borgarbokasafn.is/' target='_blank' rel='noopener'>Borgarbókasafns Reykjavíkur</a> til Bókasafnasjóðs og framkvæmt með almenningsbókasöfnum landsins og <a class='org-link' href='https://www.groandi.org/en' target='_blank' rel='noopener'>Gróanda</a> á Ísafirði. Við segjum þetta hreint út því styrkveitendur athuga þetta — og bókasöfnin eiga heiðurinn skilið.",
+      ev1_w:"<a class='org-link' href='https://borgarbokasafn.is/en/library/gerduberg-city-library' target='_blank' rel='noopener'>Borgarbókasafnið Gerðubergi</a> · Reykjavík", ev1_h:"Heildræn umhverfishyggja og matvælavarðveisla",
+      ev1_p:"Pallborð um heildræna umhverfishyggju við borð fullt af grænmeti í barnabókasafninu, og verkleg smiðja í að varðveita mat — lífrænt ræktað hráefni frá <a class='org-link' href='https://seljagardur.is/' target='_blank' rel='noopener'>Seljagarði</a> og <a class='org-link' href='https://reykjalundurgardyrkja.is/' target='_blank' rel='noopener'>Reykjalundi</a>, og hvernig geyma má það sem vex hér yfir veturinn.",
+      ev2_w:"<a class='org-link' href='https://borgarbokasafn.is/en/library/ulfarsardalur-city-library' target='_blank' rel='noopener'>Borgarbókasafnið Úlfarsárdal</a> · Reykjavík", ev2_h:"Aðgerðir og seigla",
       ev2_p:"Mannfræðiprófessor, listakona, umhverfisráðgjafi og formaður félagasamtaka um hvaðan aðgerðasinnar sækja kraftinn og hvernig fólk heldur áfram — allt samtalið teiknað upp á veggnum að baki þeim.",
-      ev3_w:"Akureyri · september 2024", ev3_h:"Akureyri",
-      ev3_p:"Norðurland, með bæjarbókasafninu — lítil borð, verkefnablöð og kaffi, og fjörðurinn út um gluggann.",
-      ev4_w:"Reykjavík · desember 2024", ev4_h:"Grófin",
-      ev4_p:"Aðalsafn borgarinnar um miðjan desember — fjölskyldur, börn og fullorðnir í sama rými, sem er einmitt það sem „fyrir alla aldurshópa“ á að þýða.",
-      ev5_w:"Ísafjörður · Gróandi", ev5_h:"Gróandi — tilfinningar",
+      ev3_w:"<a class='org-link' href='https://www.akureyri.is/amtsbokasafnid' target='_blank' rel='noopener'>Amtsbókasafnið</a> · Akureyri", ev3_h:"Amtsbókasafnið — tilfinningar",
+      ev3_p:"Tilfinningahluti kaffihússins — fólk sat saman í hring og deildi því hvernig umhverfisbreytingar líða því, með rými fyrir áhyggjur, sorg og von.",
+      ev4_w:"<a class='org-link' href='https://www.akureyri.is/amtsbokasafnid' target='_blank' rel='noopener'>Amtsbókasafnið</a> · Akureyri", ev4_h:"Amtsbókasafnið — aðgerðir",
+      ev4_p:"Framkvæmdahlutinn — hugmyndir og spurningar skrifaðar niður saman við borðin og gerðar að raunhæfum skrefum sem fólk gæti tekið í eigin lífi og samfélagi.",
+      ev5_w:"<a class='org-link' href='https://www.groandi.org/en' target='_blank' rel='noopener'>Gróandi</a> · Ísafjörður", ev5_h:"Gróandi — tilfinningar",
       ev5_p:"Tilfinningahluti kaffihússins. Við eitt langt borð máluðu þátttakendur hvernig umhverfisbreytingar líða þeim — með vatnslitum, blýöntum og laufum úr garðinum — áður en nokkur var beðinn um að gera neitt í málinu.",
-      ev6_w:"Ísafjörður · Gróandi", ev6_h:"Gróandi — aðgerðir",
+      ev6_w:"<a class='org-link' href='https://www.groandi.org/en' target='_blank' rel='noopener'>Gróandi</a> · Ísafjörður", ev6_h:"Gróandi — aðgerðir",
       ev6_p:"Framkvæmdahlutinn. Grænmeti og kryddjurtir tíndar í Gróanda-garðinum, þvegnar, skornar og eldaðar saman við sama borð og síðan deilt — og samtalið hélt áfram yfir matnum.",
+      ev7_w:"<a class='org-link' href='https://borgarbokasafn.is/en/library/grofin-city-library' target='_blank' rel='noopener'>Borgarbókasafnið Grófinni</a> · Reykjavík", ev7_h:"Jólagjafaskipti",
+      ev7_p:"Jólagjafaskipti í aðalsafni borgarinnar, sem mildari valkostur við jólainnkaupin — fjölskyldur, börn og fullorðnir í sama rými, sem er einmitt það sem „fyrir alla aldurshópa“ á að þýða.",
       c1_l1:"<strong>Ísafjörður</strong> — Vestfirðir, skráð hjá Ísafjarðarbæ. Að koma verkefninu út fyrir höfuðborgina var markmiðið, ekki bónus.",
       c1_l2:"<strong>Hverjir komu</strong> — háskólanemar, fjölskyldur, heimafólk og fólk sem býr á Íslandi en er fætt annars staðar. Sextíu til sjötíu manns yfir verkefnið.",
       c1_l3:"<strong>Hvað stendur eftir</strong> — útgefin lokaskýrsla og viðtöl við þátttakendur sem birt voru á samfélagsmiðlum.",
